@@ -1,6 +1,7 @@
 new Vue({
   el: "#app",
   data: {
+    productAddCart: true,
     message: "Hello VUE",
     counter: 0,
     x: 0,

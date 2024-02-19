@@ -19,7 +19,10 @@
             <span v-on:mousemove.stop.prevent>stop text</span>
         </h2>
         <p v-html="bigText"></p>
-        
+        <h3 v-if="productAddCart">Добавить товар в корзину?</h3>
+        <h3 v-else="!productAddCart">Товар добавлен в корзину.</h3>
+        <h3 v-show="productAddCart">show</h3>
+        <button @click="productAddCart =! productAddCart">Add product</button>
     </div>
 
     <script src="./vueScript.js"></script>
