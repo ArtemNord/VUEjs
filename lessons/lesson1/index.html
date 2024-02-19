@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson1</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 class="title">{{ message}}</h1>
+        <button v-on:click="changeText">click button</button>
+        <h2>Счетчик</h2>
+        <button v-on:click="increase(5, $event)">increase {{ counter }}</button>
+        <!-- <p>{{ counter }}</p> -->
+        <h2 v-on:mousemove="mouseMove($event)">
+            Mouse move {{ x }} - {{ y }} 
+            <span v-on:mousemove.stop.prevent>stop text</span>
+        </h2>
+        <p v-html="bigText"></p>
+        
+    </div>
+
+    <script src="./vueScript.js"></script>
+</body>
+</html>
