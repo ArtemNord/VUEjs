@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>Товаров в корзине {{ count }}</p>
+      <button v-for="button in buttons" :key="button.id" @click="buyItem(button)">
+        {{ button.text }}
+      </button>
+    </div>
+  
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          count: 0,
+          buttons: [
+            { id: 1, text: 'Купить', inCart: false },
+            { id: 2, text: 'Купить', inCart: false },
+            { id: 3, text: 'Купить', inCart: false },
+            { id: 4, text: 'Купить', inCart: false }
+          ]
+        },
+        methods: {
+          buyItem(button) {
+            if (!button.inCart) {
+              this.count++;
+              button.inCart = true;
+              button.text = 'Товар в Корзине';
+            }
+          }
+        }
+      });
+    </script>
+   
+  </body>
+  </html>
