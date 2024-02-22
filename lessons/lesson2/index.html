@@ -11,11 +11,18 @@
 <body>
     
     <div id="app">
-        <h2>list</h2>
+        <article v-for="article in data" :key="article.id" class="article">
+            <h2 class="article__title">{{ article.title }}</h2>
+            <p class="article__text">{{ article.text }}</p>
+            <button class="btn" @click="likeToggle = !likeToggle" :class="{like: likeToggle}">like</button>
+        </article>
+
+
+        <!-- <h2>list</h2>
         <ul>
             <li v-for="item in listItems" :key="item.id"> {{ item }} </li>
         </ul>
-        
+        <input v-model="newList" type="text" @keyup.enter="addItem"/> -->
 
 
         <!-- <h2>Конструктор</h2>

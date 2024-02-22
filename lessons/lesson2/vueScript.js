@@ -1,18 +1,26 @@
 new Vue({
   el: "#app",
   data: {
-    listItems: [1, 2, 4],
-
-    blockWidth: 100,
-    blockColor: "yellow",
-
-    firstNum: 0,
-    secondNum: 0,
-    result: 0,
-
-    modelData: "",
-    linkHref: "product.html",
-    imgPhoto: "image.jpg",
+    likeToggle: false,
+    data: [
+      {
+        title: "title text",
+        text: "description text info element",
+      },
+      {
+        title: "new title text",
+        text: "new description text info element",
+      },
+    ],
+    // listItems: [1, 2, 4],
+    // blockWidth: 100,
+    // blockColor: "yellow",
+    // firstNum: 0,
+    // secondNum: 0,
+    // result: 0,
+    // modelData: "",
+    // linkHref: "product.html",
+    // imgPhoto: "image.jpg",
     // styleBlock: {
     //   backgroundColor: "green",
     //   color: "red",
@@ -39,6 +47,9 @@ new Vue({
     },
     div() {
       this.result = this.firstNum / this.secondNum;
+    },
+    addItem() {
+      this.listItems.push(this.newList);
     },
   },
   computed: {
