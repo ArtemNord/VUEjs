@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson2</title>
+    <script src="./vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div id="app">
+        <h2>list</h2>
+        <ul>
+            <li v-for="item in listItems" :key="item.id"> {{ item }} </li>
+        </ul>
+        
+
+
+        <!-- <h2>Конструктор</h2>
+        <input v-model="blockWidth" type="text" />
+        <input v-model="blockColor" type="text" />
+
+        <div></div>
+
+        <input type="text" @keyup.enter="send()"> <button @click="send()">Отправить</button>
+        <h2>link elem</h2>
+        <a :href="linkHref">my new link</a>
+        <img :src="imgPhoto" alt="image">
+        <div class="block" :style="change">Lorem ipsum dolor sit amet.</div>
+        <h2>{{ modelData }}</h2>
+        <input type="text" v-model.lazy="modelData"/>
+        <button @click="headingText()" class="heading__button">click heading</button>
+
+        <h2>Калькулятор</h2>
+        <input v-model.number="firstNum" type="text" />
+        <input v-model.number="secondNum" type="text" />
+        =
+        {{ result }}
+        <div>
+            <button @click="plus()">+</button>
+            <button @click="minus()">-</button>
+            <button @click="mult()">*</button>
+            <button @click="div()">/</button>
+        </div> -->
+
+    </div>
+    <script src="./vueScript.js"></script>
+</body>
+</html>
