@@ -1,0 +1,148 @@
+.top-blog {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(226, 226, 226);
+    position: relative;
+
+    &__title-box{
+        display: flex;
+        width: 503px;
+        padding: 41px 78px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 37px 37px 0px 0px;
+        background: #FFF;
+        position: absolute;
+        bottom: 0px;
+    }
+
+    &__title {
+        color: $header_font_color;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 62.5px;
+    }
+
+    &__subtitle {
+        color: $text_font_color;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0.22px;
+    }
+
+}
+
+.latest {
+    margin-top: 200px;
+    margin-bottom: 60px;
+
+    &__title {
+        color: $header_font_color;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 62.5px;
+        letter-spacing: 1px;
+        margin-bottom: 27px;
+    }
+
+    &__card {
+        width: 1200px;
+        padding: 22px;
+        display: flex;
+        gap: 65px;
+        border-radius: 62px;
+        border: 1px solid #E7E7E7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+    }
+
+    &__image {
+        border-radius: 50px;
+    }
+
+    &__content {
+        width: 469px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__subtitle {
+        color: $header_font_color;
+        font-family: DM Serif Display;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 31.25px;
+        letter-spacing: 0.5px;
+        margin-bottom: 22px;
+    }
+
+    &__text {
+        color: $text_font_color;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0.22px;
+        margin-bottom: 41px;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__date {
+        color: $text_font_color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+    }
+}
+
+.articles {
+    &__blog-title {
+        color: $header_font_color;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 62.5px;
+        letter-spacing: 1px;
+    }
+
+    &__box {
+        display: flex;
+    }
+
+    &__paginator {
+        margin-top: 51px;
+        margin-bottom: 200px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__page {
+        width: 52px;
+        height: 52px;
+        border: 1px solid $borders_color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $header_font_color;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    &__current-page {
+        background-color: $highlight_color;
+        border: none;
+    }
+
+}

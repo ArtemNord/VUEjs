@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Blog_details</title>
+</head>
+<body>
+    <div id="app">
+        <header class="header center">
+            <div class="header__logo">
+            <a class="header__logo-link" href="index.html"
+                ><img src="img/logo.svg" alt="Логотип сайта" class="header__logo-img"
+            /></a>
+            </div>
+            <nav class="nav">
+            <ul class="nav__items-list">
+                <li class="nav__item">
+                <a href="index.html" class="nav__item-link">Home</a>
+                </li>
+                <li class="nav__item">
+                <a href="#" class="nav__item-link">Project</a>
+                </li>
+                <li class="nav__item">
+                <a href="blog.html" class="nav__item-link">Blog</a>
+                </li>
+            </ul>
+            </nav>
+        </header>
+        <section class="top-blog">
+            <img src="img/blog_details/top_image.jpg" alt="Мебель" class="top-blog__banner">
+        </section>
+        <section class="blog-details-content center">
+            <article class="article">
+                <h1 class="article__title">
+                    Let’s Get Solution for Building Construction Work
+                </h1>
+                <img src="img/blog_details/blog_details_1.jpg" alt="Кухня" class="article__image">
+                <div class="article__info">
+                    <p class="article__info-text">26 December, 2022</p>
+                    <p class="article__info-text">Interior / Home / Decore</p>
+                </div>
+                <p class="article__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.</p>
+                <p class="article__text">Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
+                <div class="article__highlight">
+                    <div class="article__highlight__content">
+                        <p class="article__highlight__signs">,,</p>
+                        <p class="article__highlight__text">The details are not the details.
+                            They make the design.</p>
+                    </div>
+                </div>
+                <p class="article__title">Design sprints are great</p>
+                <p class="article__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+                <ol class="article__list">
+                    <li class="article__list__item">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                    <li class="article__list__item">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                    <li class="article__list__item">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                </ol>
+                <img src="img/blog_details/blog_details_2.jpg" alt="Кухня" class="article__image">
+                <p class="article__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+            </article>
+            <div class="filters">
+                <p class="filters__title">Tags</p>
+                <div class="filters__buttons">
+                    <button v-for="button in buttons" :key="button.id" class="filters__item" :class="{ 'filters__item-active': button.is_active }" @click="filter(button)">{{ button.name }}</button>
+                </div>
+            </div>
+        </section>
+        <section class="articles center">
+            <h2 class="articles__blog-title">Articles & News</h2>
+            <div class="articles__box">
+                <article v-for="article in filtered_articles" :key="article.id" class="articles__card">
+                    <img :src="article.img" :alt="article.imgText" class="articles__image">
+                    <p class="articles__image_text">{{ article.imgText }}</p>
+                    <a href="blog_details.html" class="articles__article-title">{{ article.title }}</a>
+                    <div class="articles__bottom_box">
+                        <p class="articles__date">{{ article.date }}</p>
+                        <a href="blog_details.html" class="articles__link"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
+                            <circle cx="26" cy="26.267" r="26" fill="#F4F0EC"/>
+                            <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <footer class="footer center">
+            <div class="footer__company">
+                <img src="img/logo.svg" alt="Логотип" class="footer__logo">
+                <p class="footer__company-text">It is a long established fact that a reader will be distracted lookings.</p>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><img src="img/twitter.svg" alt="twitter"></a>
+                    <a href="#" class="footer__social-link"><img src="img/linkedin.svg" alt="linkedin"></a>
+                </div>
+            </div>
+            <div class="footer__navigation">
+                <p class="footer__nav-title">Pages</p>
+                <a href="index.html" class="footer__nav-text">Home</a>
+                <a href="#" class="footer__nav-text">Project</a>
+                <a href="blog.html" class="footer__nav-text">Blog</a>
+            </div>
+            <div class="footer__contacts">
+                <p class="footer__contacts-title">Contact</p>
+                <p class="footer__contacts-text">55 East Birchwood Ave. Brooklyn, New York 11201</p>
+                <p class="footer__contacts-text">contact@interno.com</p>
+                <p class="footer__contacts-text">(123) 456 - 7890</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        var app = new Vue({
+          el: "#app",
+          data: {
+            articles: [
+              {
+                id: 1,
+                img: 'img/blog/article_1.jpg',
+                imgText: 'Kitchan Design',
+                title: 'Let’s Get Solution For Building Construction Work',
+                date: '26 December, 2022',
+                tag: 'Kitchen'
+              },
+              {
+                id: 2,
+                img: 'img/blog/article_2.jpg',
+                imgText: 'Living Design',
+                title: 'Low Cost Latest Invented Interior Designing Ideas',
+                date: '22 December, 2022',
+                tag: 'Living'
+              },
+              {
+                id: 3,
+                img: 'img/blog/article_3.jpg',
+                imgText: 'Interior Design',
+                title: 'Best For Any Office & Business Interior Solution',
+                date: '25 December, 2022',
+                tag: 'Interior'
+              },
+              {
+                id: 4,
+                img: 'img/blog/article_4.jpg',
+                imgText: 'Kitchan Design',
+                title: 'Let’s Get Solution For Building Construction Work',
+                date: '26 December, 2022',
+                tag: 'Kitchen'
+              },
+              {
+                id: 5,
+                img: 'img/blog/article_5.jpg',
+                imgText: 'Living Design',
+                title: 'Low Cost Latest Invented Interior Designing Ideas',
+                date: '22 December, 2022',
+                tag: 'Living'
+              },
+              {
+                id: 6,
+                img: 'img/blog/article_6.jpg',
+                imgText: 'Interior Design',
+                title: 'Best For Any Office & Business Interior Solution',
+                date: '25 December, 2022',
+                tag: 'Interior'
+              },
+            ],
+            buttons: [
+                {
+                    id: 1,
+                    name: 'Kitchen',
+                    is_active: false
+                },
+                {
+                    id: 2,
+                    name: 'Bedroom',
+                    is_active: false
+                },
+                {
+                    id: 3,
+                    name: 'Living',
+                    is_active: false
+                },
+                {
+                    id: 4,
+                    name: 'Architecture',
+                    is_active: false
+                },
+                {
+                    id: 5,
+                    name: 'Kitchen Planning',
+                    is_active: false
+                },
+                {
+                    id: 6,
+                    name: 'Interior',
+                    is_active: false
+                },
+            ],
+            filtered_articles: [
+            {
+              id: 1,
+              img: 'img/blog/article_1.jpg',
+              imgText: 'Kitchan Design',
+              title: 'Let’s Get Solution For Building Construction Work',
+              date: '26 December, 2022',
+              tag: 'Kitchen'
+            },
+            {
+              id: 2,
+              img: 'img/blog/article_2.jpg',
+              imgText: 'Living Design',
+              title: 'Low Cost Latest Invented Interior Designing Ideas',
+              date: '22 December, 2022',
+              tag: 'Living'
+            },
+            {
+              id: 3,
+              img: 'img/blog/article_3.jpg',
+              imgText: 'Interior Design',
+              title: 'Best For Any Office & Business Interior Solution',
+              date: '25 December, 2022',
+              tag: 'Interior'
+            },
+            {
+              id: 4,
+              img: 'img/blog/article_4.jpg',
+              imgText: 'Kitchan Design',
+              title: 'Let’s Get Solution For Building Construction Work',
+              date: '26 December, 2022',
+              tag: 'Kitchen'
+            },
+            {
+              id: 5,
+              img: 'img/blog/article_5.jpg',
+              imgText: 'Living Design',
+              title: 'Low Cost Latest Invented Interior Designing Ideas',
+              date: '22 December, 2022',
+              tag: 'Living'
+            },
+            {
+              id: 6,
+              img: 'img/blog/article_6.jpg',
+              imgText: 'Interior Design',
+              title: 'Best For Any Office & Business Interior Solution',
+              date: '25 December, 2022',
+              tag: 'Interior'
+            },
+          ],
+
+
+          },
+          methods: {
+            filter(currentButton) {
+                currentButton.is_active = !currentButton.is_active;
+                active_buttons = this.buttons.filter((button) => button.is_active);
+                active_buttons_names = active_buttons.map((button) => button.name);
+
+                filtered = [];
+                this.articles.forEach(function(article){
+                    if (active_buttons_names.indexOf(article.tag) != -1) {
+                        filtered.push(article);
+                    }
+                })
+
+                if (active_buttons_names.length === 0) {
+                    this.filtered_articles = this.articles.slice(0);
+                } else {
+                    this.filtered_articles = filtered;
+                }
+            },
+          }
+        });
+      </script>
+</body>
+</html>
