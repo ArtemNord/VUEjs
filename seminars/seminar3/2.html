@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      <todo-list></todo-list>
+    </div>
+    
+    <script>
+    Vue.component('todo-list', {
+      template: `
+        <div>
+        <input type="text" v-model="newItem" placeholder="Добавить элемент">
+        <button @click="addItem">Добавить</button>
+        <ul>
+          <li v-for="item in items" :key="item.id">
+            {{ item.name }}
+            <button @click="removeItem(item.id)">Удалить</button>
+          </li>
+        </ul>
+      </div>
+      `,
+      data() {
+        return {
+          newItem: '',
+          items: []
+        };
+      },
+      methods: {
+        addItem() {
+          if (this.newItem) {
+            const newItem = {
+              id: Date.now(),
+              name: this.newItem
+            };
+            this.items.push(newItem);
+            this.newItem = '';
+          }
+        },
+        removeItem(itemId) {
+          this.items = this.items.filter(item => item.id !== itemId);
+        }
+      }
+    });
+    
+    new Vue({
+      el: '#app'
+    });
+    </script>
+    
+</body>
+</html>

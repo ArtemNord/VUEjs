@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <list-filter></list-filter>
+  </div>
+
+    <script>
+Vue.component('list-filter', {
+  template: `
+    <div>
+    <input type="text" v-model="filterText" placeholder="Фильтр">
+    <ul>
+      <li v-for="item in filteredList" :key="item.id">{{ item.name }}</li>
+    </ul>
+  </div>
+  `,
+  data() {
+    return {
+      filterText: '',
+      items: [
+        { id: 1, name: 'list 1' },
+        { id: 2, name: 'list 2' },
+        { id: 3, name: 'list 3' }
+      ]
+    };
+  },
+  computed: {
+    filteredList() {
+      return this.items.filter(item => item.name.toLowerCase().includes(this.filterText));
+    }
+  }
+});
+
+new Vue({
+  el: '#app'
+});
+
+</script>
+    
+</body>
+</html>
