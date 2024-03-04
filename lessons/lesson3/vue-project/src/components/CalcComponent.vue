@@ -8,7 +8,8 @@
             <button @click="addButton(tab)" v-for="tab in tabs" :key="tab.id">
                 {{ tab }}
             </button>
-            <button>=</button>
+            <button @click="calcResult">=</button>
+            <button class="reset" @click="reset">reset</button>
         </div>
     </div>
 </template>
@@ -19,7 +20,7 @@ export default {
 
     data() {
         return {
-            result: 0,
+            result: '',
             nums: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
             tabs: ['-', '+', '*', '/']
         };
@@ -27,7 +28,14 @@ export default {
 
     methods: {
         addButton(char) {
+            this.result = this.result.toString();
             this.result += char 
+        },
+        calcResult() {
+            this.result = eval(this.result);
+        },
+        reset() {
+            this.result = '';
         }
     },
 };
@@ -44,6 +52,9 @@ export default {
 .input {
     grid-column: 1 / -1;
     text-align: right;
+}
+.reset {
+    grid-column: 1 / -1;
 }
 
 </style>

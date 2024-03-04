@@ -2,7 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome"/>
-    <CalcComponent msg="Welcome"/>
+    <CalcComponent />
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <CalcComponent />
   </div>
 </template>
 
